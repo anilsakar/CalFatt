@@ -1,0 +1,895 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0125BE12A81963B6C7C287C1 /* Pods_CalFatt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690AB3505C941A3B961B5EE0 /* Pods_CalFatt.framework */; };
+		047D0C57253E068D00214519 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D0C56253E068D00214519 /* NetworkService.swift */; };
+		047D0C62253E3D6D00214519 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D0C61253E3D6D00214519 /* Search.swift */; };
+		047D0C67253E3DAE00214519 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D0C66253E3DAE00214519 /* Foods.swift */; };
+		047D0C6C253E3DD500214519 /* FoodNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D0C6B253E3DD500214519 /* FoodNutrients.swift */; };
+		047D483C253DBB79005D0425 /* customUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D483B253DBB79005D0425 /* customUITextField.swift */; };
+		047D4844253DE663005D0425 /* SearchFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D4843253DE663005D0425 /* SearchFoodViewController.swift */; };
+		04819D56253B9E6100F508E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819D55253B9E6100F508E1 /* AppDelegate.swift */; };
+		04819D58253B9E6100F508E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819D57253B9E6100F508E1 /* SceneDelegate.swift */; };
+		04819D5A253B9E6100F508E1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819D59253B9E6100F508E1 /* MainViewController.swift */; };
+		04819D5D253B9E6100F508E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04819D5B253B9E6100F508E1 /* Main.storyboard */; };
+		04819D60253B9E6100F508E1 /* CalFatt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04819D5E253B9E6100F508E1 /* CalFatt.xcdatamodeld */; };
+		04819D62253B9E6400F508E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04819D61253B9E6400F508E1 /* Assets.xcassets */; };
+		04819D65253B9E6400F508E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04819D63253B9E6400F508E1 /* LaunchScreen.storyboard */; };
+		04819D70253B9E6500F508E1 /* CalFattTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819D6F253B9E6500F508E1 /* CalFattTests.swift */; };
+		04819D7B253B9E6500F508E1 /* CalFattUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819D7A253B9E6500F508E1 /* CalFattUITests.swift */; };
+		04819DC3253BA4A100F508E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04819DC2253BA4A000F508E1 /* GoogleService-Info.plist */; };
+		04819DC4253BA4A100F508E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04819DC2253BA4A000F508E1 /* GoogleService-Info.plist */; };
+		04819DC5253BA4A100F508E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04819DC2253BA4A000F508E1 /* GoogleService-Info.plist */; };
+		049684D9253CD1F20029F895 /* AnimatedGradientView in Frameworks */ = {isa = PBXBuildFile; productRef = 049684D8253CD1F20029F895 /* AnimatedGradientView */; };
+		049684DF253CE4A40029F895 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 049684DE253CE4A40029F895 /* SwiftKeychainWrapper */; };
+		BE27B01C64132D66FDC537C1 /* Pods_CalFatt_CalFattUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */; };
+		F7A51412973D9508F3602FDF /* Pods_CalFattTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64F168CFF6799EB43023039 /* Pods_CalFattTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04819D6C253B9E6500F508E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04819D4A253B9E6100F508E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04819D51253B9E6100F508E1;
+			remoteInfo = CalFatt;
+		};
+		04819D77253B9E6500F508E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04819D4A253B9E6100F508E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04819D51253B9E6100F508E1;
+			remoteInfo = CalFatt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		047D0C56253E068D00214519 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		047D0C61253E3D6D00214519 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		047D0C66253E3DAE00214519 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
+		047D0C6B253E3DD500214519 /* FoodNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNutrients.swift; sourceTree = "<group>"; };
+		047D483B253DBB79005D0425 /* customUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customUITextField.swift; sourceTree = "<group>"; };
+		047D4843253DE663005D0425 /* SearchFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodViewController.swift; sourceTree = "<group>"; };
+		04819D52253B9E6100F508E1 /* CalFatt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalFatt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04819D55253B9E6100F508E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04819D57253B9E6100F508E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04819D59253B9E6100F508E1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		04819D5C253B9E6100F508E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04819D5F253B9E6100F508E1 /* CalFatt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CalFatt.xcdatamodel; sourceTree = "<group>"; };
+		04819D61253B9E6400F508E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04819D64253B9E6400F508E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04819D66253B9E6400F508E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04819D6B253B9E6500F508E1 /* CalFattTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalFattTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04819D6F253B9E6500F508E1 /* CalFattTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalFattTests.swift; sourceTree = "<group>"; };
+		04819D71253B9E6500F508E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04819D76253B9E6500F508E1 /* CalFattUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalFattUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04819D7A253B9E6500F508E1 /* CalFattUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalFattUITests.swift; sourceTree = "<group>"; };
+		04819D7C253B9E6500F508E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04819DC2253BA4A000F508E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFatt_CalFattUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36E77BBC996FC0FFB22CCB7E /* Pods-CalFatt-CalFattUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFatt-CalFattUITests.release.xcconfig"; path = "Target Support Files/Pods-CalFatt-CalFattUITests/Pods-CalFatt-CalFattUITests.release.xcconfig"; sourceTree = "<group>"; };
+		690AB3505C941A3B961B5EE0 /* Pods_CalFatt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFatt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67BDCFB38A626AE10E8C5E5 /* Pods-CalFatt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFatt.debug.xcconfig"; path = "Target Support Files/Pods-CalFatt/Pods-CalFatt.debug.xcconfig"; sourceTree = "<group>"; };
+		C386BA6ECDBF4FF0C92BFB1C /* Pods-CalFattTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFattTests.debug.xcconfig"; path = "Target Support Files/Pods-CalFattTests/Pods-CalFattTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C64F168CFF6799EB43023039 /* Pods_CalFattTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFattTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD61F729378BD5B2A22E4DDF /* Pods-CalFattTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFattTests.release.xcconfig"; path = "Target Support Files/Pods-CalFattTests/Pods-CalFattTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6398F9531E234D2CC755019 /* Pods-CalFatt-CalFattUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFatt-CalFattUITests.debug.xcconfig"; path = "Target Support Files/Pods-CalFatt-CalFattUITests/Pods-CalFatt-CalFattUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9D541EDD0E63623218AFD1D /* Pods-CalFatt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFatt.release.xcconfig"; path = "Target Support Files/Pods-CalFatt/Pods-CalFatt.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04819D4F253B9E6100F508E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				049684D9253CD1F20029F895 /* AnimatedGradientView in Frameworks */,
+				0125BE12A81963B6C7C287C1 /* Pods_CalFatt.framework in Frameworks */,
+				049684DF253CE4A40029F895 /* SwiftKeychainWrapper in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04819D68253B9E6500F508E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A51412973D9508F3602FDF /* Pods_CalFattTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04819D73253B9E6500F508E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE27B01C64132D66FDC537C1 /* Pods_CalFatt_CalFattUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		047D4831253DB44B005D0425 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04819D59253B9E6100F508E1 /* MainViewController.swift */,
+				047D4843253DE663005D0425 /* SearchFoodViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		047D4832253DB458005D0425 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				047D0C61253E3D6D00214519 /* Search.swift */,
+				047D0C66253E3DAE00214519 /* Foods.swift */,
+				047D0C6B253E3DD500214519 /* FoodNutrients.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		047D4833253DB45F005D0425 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				047D0C56253E068D00214519 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		047D4834253DB505005D0425 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				047D4836253DB549005D0425 /* Storyboards */,
+				04819D61253B9E6400F508E1 /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		047D4835253DB513005D0425 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04819D55253B9E6100F508E1 /* AppDelegate.swift */,
+				04819D57253B9E6100F508E1 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		047D4836253DB549005D0425 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				04819D5B253B9E6100F508E1 /* Main.storyboard */,
+				04819D63253B9E6400F508E1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		047D483A253DBB31005D0425 /* CustomDesigns */ = {
+			isa = PBXGroup;
+			children = (
+				047D483B253DBB79005D0425 /* customUITextField.swift */,
+			);
+			path = CustomDesigns;
+			sourceTree = "<group>";
+		};
+		04819D49253B9E6100F508E1 = {
+			isa = PBXGroup;
+			children = (
+				04819D54253B9E6100F508E1 /* CalFatt */,
+				04819D6E253B9E6500F508E1 /* CalFattTests */,
+				04819D79253B9E6500F508E1 /* CalFattUITests */,
+				04819D53253B9E6100F508E1 /* Products */,
+				2E82B8DF7A3D3D9AEEE2B83A /* Pods */,
+				C31550E3F4AA92F1BFA25834 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		04819D53253B9E6100F508E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04819D52253B9E6100F508E1 /* CalFatt.app */,
+				04819D6B253B9E6500F508E1 /* CalFattTests.xctest */,
+				04819D76253B9E6500F508E1 /* CalFattUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04819D54253B9E6100F508E1 /* CalFatt */ = {
+			isa = PBXGroup;
+			children = (
+				047D4835253DB513005D0425 /* Resources */,
+				047D4834253DB505005D0425 /* Views */,
+				047D4831253DB44B005D0425 /* Controllers */,
+				047D4832253DB458005D0425 /* Models */,
+				047D4833253DB45F005D0425 /* Network */,
+				047D483A253DBB31005D0425 /* CustomDesigns */,
+				04819D66253B9E6400F508E1 /* Info.plist */,
+				04819D5E253B9E6100F508E1 /* CalFatt.xcdatamodeld */,
+				04819DC2253BA4A000F508E1 /* GoogleService-Info.plist */,
+			);
+			path = CalFatt;
+			sourceTree = "<group>";
+		};
+		04819D6E253B9E6500F508E1 /* CalFattTests */ = {
+			isa = PBXGroup;
+			children = (
+				04819D6F253B9E6500F508E1 /* CalFattTests.swift */,
+				04819D71253B9E6500F508E1 /* Info.plist */,
+			);
+			path = CalFattTests;
+			sourceTree = "<group>";
+		};
+		04819D79253B9E6500F508E1 /* CalFattUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04819D7A253B9E6500F508E1 /* CalFattUITests.swift */,
+				04819D7C253B9E6500F508E1 /* Info.plist */,
+			);
+			path = CalFattUITests;
+			sourceTree = "<group>";
+		};
+		2E82B8DF7A3D3D9AEEE2B83A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A67BDCFB38A626AE10E8C5E5 /* Pods-CalFatt.debug.xcconfig */,
+				F9D541EDD0E63623218AFD1D /* Pods-CalFatt.release.xcconfig */,
+				E6398F9531E234D2CC755019 /* Pods-CalFatt-CalFattUITests.debug.xcconfig */,
+				36E77BBC996FC0FFB22CCB7E /* Pods-CalFatt-CalFattUITests.release.xcconfig */,
+				C386BA6ECDBF4FF0C92BFB1C /* Pods-CalFattTests.debug.xcconfig */,
+				CD61F729378BD5B2A22E4DDF /* Pods-CalFattTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C31550E3F4AA92F1BFA25834 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				690AB3505C941A3B961B5EE0 /* Pods_CalFatt.framework */,
+				25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */,
+				C64F168CFF6799EB43023039 /* Pods_CalFattTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04819D51253B9E6100F508E1 /* CalFatt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04819D7F253B9E6500F508E1 /* Build configuration list for PBXNativeTarget "CalFatt" */;
+			buildPhases = (
+				4493BCF92E33F733FCB7B7C1 /* [CP] Check Pods Manifest.lock */,
+				04819D4E253B9E6100F508E1 /* Sources */,
+				04819D4F253B9E6100F508E1 /* Frameworks */,
+				04819D50253B9E6100F508E1 /* Resources */,
+				D0A3E430A6DDF443F809E1C1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalFatt;
+			packageProductDependencies = (
+				049684D8253CD1F20029F895 /* AnimatedGradientView */,
+				049684DE253CE4A40029F895 /* SwiftKeychainWrapper */,
+			);
+			productName = CalFatt;
+			productReference = 04819D52253B9E6100F508E1 /* CalFatt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04819D6A253B9E6500F508E1 /* CalFattTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04819D82253B9E6500F508E1 /* Build configuration list for PBXNativeTarget "CalFattTests" */;
+			buildPhases = (
+				1FF4C96EA9E663239002B4FC /* [CP] Check Pods Manifest.lock */,
+				04819D67253B9E6500F508E1 /* Sources */,
+				04819D68253B9E6500F508E1 /* Frameworks */,
+				04819D69253B9E6500F508E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04819D6D253B9E6500F508E1 /* PBXTargetDependency */,
+			);
+			name = CalFattTests;
+			productName = CalFattTests;
+			productReference = 04819D6B253B9E6500F508E1 /* CalFattTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04819D75253B9E6500F508E1 /* CalFattUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04819D85253B9E6500F508E1 /* Build configuration list for PBXNativeTarget "CalFattUITests" */;
+			buildPhases = (
+				35BCA7F9E0EB72797C7607CE /* [CP] Check Pods Manifest.lock */,
+				04819D72253B9E6500F508E1 /* Sources */,
+				04819D73253B9E6500F508E1 /* Frameworks */,
+				04819D74253B9E6500F508E1 /* Resources */,
+				273A8272DDB9AA97B8B9C996 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04819D78253B9E6500F508E1 /* PBXTargetDependency */,
+			);
+			name = CalFattUITests;
+			productName = CalFattUITests;
+			productReference = 04819D76253B9E6500F508E1 /* CalFattUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04819D4A253B9E6100F508E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					04819D51253B9E6100F508E1 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					04819D6A253B9E6500F508E1 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 04819D51253B9E6100F508E1;
+					};
+					04819D75253B9E6500F508E1 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 04819D51253B9E6100F508E1;
+					};
+				};
+			};
+			buildConfigurationList = 04819D4D253B9E6100F508E1 /* Build configuration list for PBXProject "CalFatt" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04819D49253B9E6100F508E1;
+			packageReferences = (
+				049684D7253CD1F20029F895 /* XCRemoteSwiftPackageReference "AnimatedGradientView" */,
+				049684DD253CE4A40029F895 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
+			productRefGroup = 04819D53253B9E6100F508E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04819D51253B9E6100F508E1 /* CalFatt */,
+				04819D6A253B9E6500F508E1 /* CalFattTests */,
+				04819D75253B9E6500F508E1 /* CalFattUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04819D50253B9E6100F508E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04819D65253B9E6400F508E1 /* LaunchScreen.storyboard in Resources */,
+				04819DC3253BA4A100F508E1 /* GoogleService-Info.plist in Resources */,
+				04819D62253B9E6400F508E1 /* Assets.xcassets in Resources */,
+				04819D5D253B9E6100F508E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04819D69253B9E6500F508E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04819DC4253BA4A100F508E1 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04819D74253B9E6500F508E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04819DC5253BA4A100F508E1 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FF4C96EA9E663239002B4FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalFattTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		273A8272DDB9AA97B8B9C996 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalFatt-CalFattUITests/Pods-CalFatt-CalFattUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalFatt-CalFattUITests/Pods-CalFatt-CalFattUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalFatt-CalFattUITests/Pods-CalFatt-CalFattUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35BCA7F9E0EB72797C7607CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalFatt-CalFattUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4493BCF92E33F733FCB7B7C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CalFatt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0A3E430A6DDF443F809E1C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalFatt/Pods-CalFatt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CalFatt/Pods-CalFatt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CalFatt/Pods-CalFatt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04819D4E253B9E6100F508E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04819D5A253B9E6100F508E1 /* MainViewController.swift in Sources */,
+				047D483C253DBB79005D0425 /* customUITextField.swift in Sources */,
+				047D4844253DE663005D0425 /* SearchFoodViewController.swift in Sources */,
+				04819D56253B9E6100F508E1 /* AppDelegate.swift in Sources */,
+				04819D58253B9E6100F508E1 /* SceneDelegate.swift in Sources */,
+				047D0C62253E3D6D00214519 /* Search.swift in Sources */,
+				047D0C67253E3DAE00214519 /* Foods.swift in Sources */,
+				04819D60253B9E6100F508E1 /* CalFatt.xcdatamodeld in Sources */,
+				047D0C6C253E3DD500214519 /* FoodNutrients.swift in Sources */,
+				047D0C57253E068D00214519 /* NetworkService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04819D67253B9E6500F508E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04819D70253B9E6500F508E1 /* CalFattTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04819D72253B9E6500F508E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04819D7B253B9E6500F508E1 /* CalFattUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04819D6D253B9E6500F508E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04819D51253B9E6100F508E1 /* CalFatt */;
+			targetProxy = 04819D6C253B9E6500F508E1 /* PBXContainerItemProxy */;
+		};
+		04819D78253B9E6500F508E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04819D51253B9E6100F508E1 /* CalFatt */;
+			targetProxy = 04819D77253B9E6500F508E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04819D5B253B9E6100F508E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04819D5C253B9E6100F508E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04819D63253B9E6400F508E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04819D64253B9E6400F508E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04819D7D253B9E6500F508E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04819D7E253B9E6500F508E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04819D80253B9E6500F508E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A67BDCFB38A626AE10E8C5E5 /* Pods-CalFatt.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CalFatt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anilsakar.CalFatt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04819D81253B9E6500F508E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9D541EDD0E63623218AFD1D /* Pods-CalFatt.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CalFatt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anilsakar.CalFatt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04819D83253B9E6500F508E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C386BA6ECDBF4FF0C92BFB1C /* Pods-CalFattTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CalFattTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anilsakar.CalFattTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalFatt.app/CalFatt";
+			};
+			name = Debug;
+		};
+		04819D84253B9E6500F508E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD61F729378BD5B2A22E4DDF /* Pods-CalFattTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CalFattTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anilsakar.CalFattTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalFatt.app/CalFatt";
+			};
+			name = Release;
+		};
+		04819D86253B9E6500F508E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6398F9531E234D2CC755019 /* Pods-CalFatt-CalFattUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CalFattUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anilsakar.CalFattUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CalFatt;
+			};
+			name = Debug;
+		};
+		04819D87253B9E6500F508E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36E77BBC996FC0FFB22CCB7E /* Pods-CalFatt-CalFattUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CalFattUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anilsakar.CalFattUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CalFatt;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04819D4D253B9E6100F508E1 /* Build configuration list for PBXProject "CalFatt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04819D7D253B9E6500F508E1 /* Debug */,
+				04819D7E253B9E6500F508E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04819D7F253B9E6500F508E1 /* Build configuration list for PBXNativeTarget "CalFatt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04819D80253B9E6500F508E1 /* Debug */,
+				04819D81253B9E6500F508E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04819D82253B9E6500F508E1 /* Build configuration list for PBXNativeTarget "CalFattTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04819D83253B9E6500F508E1 /* Debug */,
+				04819D84253B9E6500F508E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04819D85253B9E6500F508E1 /* Build configuration list for PBXNativeTarget "CalFattUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04819D86253B9E6500F508E1 /* Debug */,
+				04819D87253B9E6500F508E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		049684D7253CD1F20029F895 /* XCRemoteSwiftPackageReference "AnimatedGradientView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rwbutler/AnimatedGradientView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		049684DD253CE4A40029F895 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		049684D8253CD1F20029F895 /* AnimatedGradientView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049684D7253CD1F20029F895 /* XCRemoteSwiftPackageReference "AnimatedGradientView" */;
+			productName = AnimatedGradientView;
+		};
+		049684DE253CE4A40029F895 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049684DD253CE4A40029F895 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		04819D5E253B9E6100F508E1 /* CalFatt.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04819D5F253B9E6100F508E1 /* CalFatt.xcdatamodel */,
+			);
+			currentVersion = 04819D5F253B9E6100F508E1 /* CalFatt.xcdatamodel */;
+			path = CalFatt.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 04819D4A253B9E6100F508E1 /* Project object */;
+}
