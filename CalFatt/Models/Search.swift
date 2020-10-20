@@ -8,17 +8,16 @@
 import Foundation
 
 struct Search: Decodable {
-    let foods: [Foods]
+    var foods: [Foods]
 }
 
 struct Foods: Decodable {
-    let fdcId: Int
-    let description: String
-    let foodNutrients: [FoodNutrients]
+    var fdcId: Int
+    var description: String
 }
 
-struct FoodNutrients: Decodable {
+/*struct FoodNutrients: Decodable {
     let nutrientName:String
     let unitName:String
     let value:Double
-}
+}*/

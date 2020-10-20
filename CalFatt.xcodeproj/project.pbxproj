@@ -27,6 +27,8 @@
 		049684D9253CD1F20029F895 /* AnimatedGradientView in Frameworks */ = {isa = PBXBuildFile; productRef = 049684D8253CD1F20029F895 /* AnimatedGradientView */; };
 		049684DF253CE4A40029F895 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 049684DE253CE4A40029F895 /* SwiftKeychainWrapper */; };
 		049D8440253F4C5800B6AF65 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D843F253F4C5800B6AF65 /* ResultsTableViewCell.swift */; };
+		049D845B253F85C900B6AF65 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D845A253F85C900B6AF65 /* Animator.swift */; };
+		049D8468253F863C00B6AF65 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D8467253F863C00B6AF65 /* Animations.swift */; };
 		BE27B01C64132D66FDC537C1 /* Pods_CalFatt_CalFattUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */; };
 		F7A51412973D9508F3602FDF /* Pods_CalFattTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64F168CFF6799EB43023039 /* Pods_CalFattTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		04819D7C253B9E6500F508E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04819DC2253BA4A000F508E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		049D843F253F4C5800B6AF65 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		049D845A253F85C900B6AF65 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		049D8467253F863C00B6AF65 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFatt_CalFattUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E77BBC996FC0FFB22CCB7E /* Pods-CalFatt-CalFattUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFatt-CalFattUITests.release.xcconfig"; path = "Target Support Files/Pods-CalFatt-CalFattUITests/Pods-CalFatt-CalFattUITests.release.xcconfig"; sourceTree = "<group>"; };
 		690AB3505C941A3B961B5EE0 /* Pods_CalFatt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFatt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +201,7 @@
 		04819D54253B9E6100F508E1 /* CalFatt */ = {
 			isa = PBXGroup;
 			children = (
+				049D8459253F85B300B6AF65 /* Animation */,
 				047D4835253DB513005D0425 /* Resources */,
 				047D4834253DB505005D0425 /* Views */,
 				047D4831253DB44B005D0425 /* Controllers */,
@@ -226,6 +231,15 @@
 				04819D7C253B9E6500F508E1 /* Info.plist */,
 			);
 			path = CalFattUITests;
+			sourceTree = "<group>";
+		};
+		049D8459253F85B300B6AF65 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				049D845A253F85C900B6AF65 /* Animator.swift */,
+				049D8467253F863C00B6AF65 /* Animations.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		2E82B8DF7A3D3D9AEEE2B83A /* Pods */ = {
@@ -500,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049D845B253F85C900B6AF65 /* Animator.swift in Sources */,
 				04819D5A253B9E6100F508E1 /* MainViewController.swift in Sources */,
 				047D483C253DBB79005D0425 /* customUITextField.swift in Sources */,
 				049D8440253F4C5800B6AF65 /* ResultsTableViewCell.swift in Sources */,
@@ -508,6 +523,7 @@
 				04819D58253B9E6100F508E1 /* SceneDelegate.swift in Sources */,
 				047D0C62253E3D6D00214519 /* Search.swift in Sources */,
 				04819D60253B9E6100F508E1 /* CalFatt.xcdatamodeld in Sources */,
+				049D8468253F863C00B6AF65 /* Animations.swift in Sources */,
 				047D0C57253E068D00214519 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,11 @@
 import UIKit
 
 class ResultsTableViewCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var foodDescriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

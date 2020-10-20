@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 open class customUITextField: UITextField {
     
     func setup() {

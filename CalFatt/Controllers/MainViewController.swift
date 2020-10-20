@@ -77,6 +77,7 @@ class MainViewController: UIViewController {
         view.sendSubviewToBack(animatedGradient)
         
         
+        
         UIView.animate(withDuration: 3, delay: 0.5, options: .curveEaseInOut, animations: {
             self.searchFoodLabel.alpha = 1.0
             self.searchTextField.alpha = 1.0
@@ -146,18 +147,6 @@ extension UIViewController{
 }
 
 extension UIView {
-    
-    func setGradientBackground(colorOne: UIColor, colorTwo: UIColor) {
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
-        gradientLayer.locations = [0.0, 5.0]
-        gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
-        
-        layer.insertSublayer(gradientLayer, at: 0)
-    }
     
     func shake(count : Float = 3,for duration : TimeInterval = 0.5,withTranslation translation : Float = 5) {
         
