@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
                                             (colors: ["#ffffcc", "#a4f9dd"], .right, .axial),
                                             (colors: ["#003973", "#E5E5BE"], .down, .axial),
                                             (colors: ["#99ff99", "#ccccff"], .left, .axial)]
-        self.hideNavigationBar()
+        //self.hideNavigationBar()
         view.addSubview(animatedGradient)
         view.sendSubviewToBack(animatedGradient)
         
@@ -101,12 +101,13 @@ class MainViewController: UIViewController {
         
         if searchTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             searchTextField.shake()
-            searchTextField.text = ""
            
         }else{
             dismissKeyboard()
             performSegue(withIdentifier: "searchFoodResults", sender: nil)
         }
+        
+        searchTextField.text = ""
         
         
     }
@@ -115,7 +116,7 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchFoodResults" {
-            if let searchFoodVC = segue.destination as? SearchFoodViewController {
+            if let searchFoodVC = segue.destination as? ResultFoodViewController{
                 searchFoodVC.searchParameter = searchTextField.text
             }
         }

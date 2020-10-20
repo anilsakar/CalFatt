@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-VP-sab" customClass="customUITextField" customModule="CalFatt" customModuleProvider="target">
-                                <rect key="frame" x="50" y="508" width="314" height="34"/>
+                                <rect key="frame" x="50" y="534" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -32,7 +32,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGx-gH-jLk">
-                                <rect key="frame" x="169.66666666666666" y="568" width="75" height="60"/>
+                                <rect key="frame" x="169.66666666666666" y="621" width="75" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="81p-xr-S0e"/>
                                     <constraint firstAttribute="width" constant="75" id="vdK-lQ-Nk1"/>
@@ -46,16 +46,16 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UTQ-VP-sab" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="51Z-Dh-5zr"/>
-                            <constraint firstItem="gGx-gH-jLk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="8cw-p6-k9J"/>
-                            <constraint firstItem="gGx-gH-jLk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hfy-8j-RRR"/>
+                            <constraint firstItem="gGx-gH-jLk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="150" id="8cw-p6-k9J"/>
+                            <constraint firstItem="gGx-gH-jLk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hfy-8j-RRR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UTQ-VP-sab" secondAttribute="trailing" constant="50" id="KkY-oS-Ug6"/>
                             <constraint firstItem="jog-Jv-UkA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="N1V-iS-MUQ"/>
                             <constraint firstItem="UTQ-VP-sab" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pmt-Vy-fSU"/>
-                            <constraint firstItem="jog-Jv-UkA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="acN-BO-Hks"/>
-                            <constraint firstItem="jog-Jv-UkA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gbp-az-r8w"/>
+                            <constraint firstItem="jog-Jv-UkA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-103" id="acN-BO-Hks"/>
+                            <constraint firstItem="jog-Jv-UkA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gbp-az-r8w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jog-Jv-UkA" secondAttribute="trailing" constant="20" id="k9W-FT-qCs"/>
                             <constraint firstItem="UTQ-VP-sab" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="50" id="qTR-F0-8Ch"/>
                         </constraints>
@@ -75,14 +75,39 @@
         <!--Results-->
         <scene sceneID="ZXe-k5-Jbp">
             <objects>
-                <viewController id="zhF-td-Q6C" customClass="SearchFoodViewController" customModule="CalFatt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zhF-td-Q6C" customClass="ResultFoodViewController" customModule="CalFatt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ptZ-hv-1dK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rU4-uj-5DW">
+                                <rect key="frame" x="20" y="160" width="374" height="682"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultsCell" rowHeight="200" id="qmw-Q1-bcS" customClass="ResultsTableViewCell" customModule="CalFatt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qmw-Q1-bcS" id="ama-5K-jOu">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RvO-05-bje"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rU4-uj-5DW" firstAttribute="top" secondItem="RvO-05-bje" secondAttribute="top" constant="20" id="42N-f9-2Yu"/>
+                            <constraint firstItem="rU4-uj-5DW" firstAttribute="leading" secondItem="RvO-05-bje" secondAttribute="leading" constant="20" id="Wha-rq-RIu"/>
+                            <constraint firstItem="RvO-05-bje" firstAttribute="trailing" secondItem="rU4-uj-5DW" secondAttribute="trailing" constant="20" id="eUo-mK-Ie0"/>
+                            <constraint firstItem="RvO-05-bje" firstAttribute="bottom" secondItem="rU4-uj-5DW" secondAttribute="bottom" constant="20" id="xhS-9c-PE0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Results" id="kvp-OG-Sq9"/>
+                    <connections>
+                        <outlet property="resultsTableView" destination="rU4-uj-5DW" id="7it-Br-qph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJm-Ub-pcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,14 +118,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EVb-Ax-O6e" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PEU-c9-1Hj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="PEU-c9-1Hj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" systemColor="labelColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -118,19 +143,14 @@
             <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
     </designables>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="nextIcon 2" width="800" height="600"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

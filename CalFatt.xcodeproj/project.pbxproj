@@ -10,10 +10,8 @@
 		0125BE12A81963B6C7C287C1 /* Pods_CalFatt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690AB3505C941A3B961B5EE0 /* Pods_CalFatt.framework */; };
 		047D0C57253E068D00214519 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D0C56253E068D00214519 /* NetworkService.swift */; };
 		047D0C62253E3D6D00214519 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D0C61253E3D6D00214519 /* Search.swift */; };
-		047D0C67253E3DAE00214519 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D0C66253E3DAE00214519 /* Foods.swift */; };
-		047D0C6C253E3DD500214519 /* FoodNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D0C6B253E3DD500214519 /* FoodNutrients.swift */; };
 		047D483C253DBB79005D0425 /* customUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D483B253DBB79005D0425 /* customUITextField.swift */; };
-		047D4844253DE663005D0425 /* SearchFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D4843253DE663005D0425 /* SearchFoodViewController.swift */; };
+		047D4844253DE663005D0425 /* ResultsFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D4843253DE663005D0425 /* ResultsFoodViewController.swift */; };
 		04819D56253B9E6100F508E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819D55253B9E6100F508E1 /* AppDelegate.swift */; };
 		04819D58253B9E6100F508E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819D57253B9E6100F508E1 /* SceneDelegate.swift */; };
 		04819D5A253B9E6100F508E1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04819D59253B9E6100F508E1 /* MainViewController.swift */; };
@@ -28,6 +26,7 @@
 		04819DC5253BA4A100F508E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04819DC2253BA4A000F508E1 /* GoogleService-Info.plist */; };
 		049684D9253CD1F20029F895 /* AnimatedGradientView in Frameworks */ = {isa = PBXBuildFile; productRef = 049684D8253CD1F20029F895 /* AnimatedGradientView */; };
 		049684DF253CE4A40029F895 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 049684DE253CE4A40029F895 /* SwiftKeychainWrapper */; };
+		049D8440253F4C5800B6AF65 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D843F253F4C5800B6AF65 /* ResultsTableViewCell.swift */; };
 		BE27B01C64132D66FDC537C1 /* Pods_CalFatt_CalFattUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */; };
 		F7A51412973D9508F3602FDF /* Pods_CalFattTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64F168CFF6799EB43023039 /* Pods_CalFattTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,10 +51,8 @@
 /* Begin PBXFileReference section */
 		047D0C56253E068D00214519 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		047D0C61253E3D6D00214519 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
-		047D0C66253E3DAE00214519 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
-		047D0C6B253E3DD500214519 /* FoodNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNutrients.swift; sourceTree = "<group>"; };
 		047D483B253DBB79005D0425 /* customUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customUITextField.swift; sourceTree = "<group>"; };
-		047D4843253DE663005D0425 /* SearchFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodViewController.swift; sourceTree = "<group>"; };
+		047D4843253DE663005D0425 /* ResultsFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsFoodViewController.swift; sourceTree = "<group>"; };
 		04819D52253B9E6100F508E1 /* CalFatt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalFatt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04819D55253B9E6100F508E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04819D57253B9E6100F508E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +69,7 @@
 		04819D7A253B9E6500F508E1 /* CalFattUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalFattUITests.swift; sourceTree = "<group>"; };
 		04819D7C253B9E6500F508E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04819DC2253BA4A000F508E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		049D843F253F4C5800B6AF65 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFatt_CalFattUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E77BBC996FC0FFB22CCB7E /* Pods-CalFatt-CalFattUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFatt-CalFattUITests.release.xcconfig"; path = "Target Support Files/Pods-CalFatt-CalFattUITests/Pods-CalFatt-CalFattUITests.release.xcconfig"; sourceTree = "<group>"; };
 		690AB3505C941A3B961B5EE0 /* Pods_CalFatt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFatt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				04819D59253B9E6100F508E1 /* MainViewController.swift */,
-				047D4843253DE663005D0425 /* SearchFoodViewController.swift */,
+				047D4843253DE663005D0425 /* ResultsFoodViewController.swift */,
+				049D843F253F4C5800B6AF65 /* ResultsTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -126,8 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				047D0C61253E3D6D00214519 /* Search.swift */,
-				047D0C66253E3DAE00214519 /* Foods.swift */,
-				047D0C6B253E3DD500214519 /* FoodNutrients.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,13 +502,12 @@
 			files = (
 				04819D5A253B9E6100F508E1 /* MainViewController.swift in Sources */,
 				047D483C253DBB79005D0425 /* customUITextField.swift in Sources */,
-				047D4844253DE663005D0425 /* SearchFoodViewController.swift in Sources */,
+				049D8440253F4C5800B6AF65 /* ResultsTableViewCell.swift in Sources */,
+				047D4844253DE663005D0425 /* ResultsFoodViewController.swift in Sources */,
 				04819D56253B9E6100F508E1 /* AppDelegate.swift in Sources */,
 				04819D58253B9E6100F508E1 /* SceneDelegate.swift in Sources */,
 				047D0C62253E3D6D00214519 /* Search.swift in Sources */,
-				047D0C67253E3DAE00214519 /* Foods.swift in Sources */,
 				04819D60253B9E6100F508E1 /* CalFatt.xcdatamodeld in Sources */,
-				047D0C6C253E3DD500214519 /* FoodNutrients.swift in Sources */,
 				047D0C57253E068D00214519 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

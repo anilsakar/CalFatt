@@ -7,12 +7,18 @@
 
 import UIKit
 
-class SearchFoodViewController: UIViewController {
+class ResultFoodViewController: UIViewController {
+    
+    @IBOutlet weak var resultsTableView: UITableView!
+    
     
     var searchParameter: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultsTableView.delegate = self
+        resultsTableView.dataSource = self
 
         if let search = searchParameter, let str = search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
             
@@ -44,4 +50,25 @@ class SearchFoodViewController: UIViewController {
     }
     */
 
+}
+
+extension ResultFoodViewController: UITableViewDelegate{
+    
+}
+
+extension ResultFoodViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath)
+        
+        
+        return cell
+         
+    }
+    
+    
 }
