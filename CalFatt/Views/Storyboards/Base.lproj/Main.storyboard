@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="jog-Jv-UkA">
-                                <rect key="frame" x="20" y="362" width="374" height="72"/>
+                                <rect key="frame" x="20" y="390" width="374" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-VP-sab" customClass="customUITextField" customModule="CalFatt" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-VP-sab" customClass="CustomUITextField" customModule="CalFatt" customModuleProvider="target">
                                 <rect key="frame" x="50" y="534" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -54,7 +54,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UTQ-VP-sab" secondAttribute="trailing" constant="50" id="KkY-oS-Ug6"/>
                             <constraint firstItem="jog-Jv-UkA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="N1V-iS-MUQ"/>
                             <constraint firstItem="UTQ-VP-sab" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pmt-Vy-fSU"/>
-                            <constraint firstItem="jog-Jv-UkA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-103" id="acN-BO-Hks"/>
+                            <constraint firstItem="jog-Jv-UkA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-75" id="acN-BO-Hks"/>
                             <constraint firstItem="jog-Jv-UkA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gbp-az-r8w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jog-Jv-UkA" secondAttribute="trailing" constant="20" id="k9W-FT-qCs"/>
                             <constraint firstItem="UTQ-VP-sab" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="50" id="qTR-F0-8Ch"/>
@@ -64,7 +64,7 @@
                     <connections>
                         <outlet property="searchButton" destination="gGx-gH-jLk" id="R49-9y-GnF"/>
                         <outlet property="searchFoodLabel" destination="jog-Jv-UkA" id="uWw-LF-TU3"/>
-                        <outlet property="searchTextField" destination="UTQ-VP-sab" id="gXW-7W-RZV"/>
+                        <outlet property="searchTextField" destination="UTQ-VP-sab" id="V4b-W2-6gF"/>
                         <segue destination="zhF-td-Q6C" kind="show" identifier="searchFoodResults" id="9yu-I8-hhY"/>
                     </connections>
                 </viewController>
@@ -75,7 +75,7 @@
         <!--Results-->
         <scene sceneID="ZXe-k5-Jbp">
             <objects>
-                <viewController id="zhF-td-Q6C" customClass="ResultFoodViewController" customModule="CalFatt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zhF-td-Q6C" customClass="FoodResultsViewController" customModule="CalFatt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ptZ-hv-1dK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,11 +149,45 @@
                     <connections>
                         <outlet property="resultsTableView" destination="rU4-uj-5DW" id="7it-Br-qph"/>
                         <outlet property="spinner" destination="szH-sS-m57" id="LPv-42-sFO"/>
+                        <segue destination="k06-VD-fkP" kind="show" identifier="foodDetails" id="d1o-G1-ySc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJm-Ub-pcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="53.571428571428569"/>
+        </scene>
+        <!--Food Detail View Controller-->
+        <scene sceneID="0ud-An-54g">
+            <objects>
+                <viewController id="k06-VD-fkP" customClass="FoodDetailViewController" customModule="CalFatt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bUm-sY-QF6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syZ-O0-X2A" customClass="CustomProgressBar" customModule="CalFatt" customModuleProvider="target">
+                                <rect key="frame" x="25" y="145" width="364" height="20"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="iFQ-Fl-qmg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hr1-Bl-K1g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hr1-Bl-K1g" firstAttribute="trailing" secondItem="syZ-O0-X2A" secondAttribute="trailing" constant="25" id="BKz-A4-sRe"/>
+                            <constraint firstItem="syZ-O0-X2A" firstAttribute="leading" secondItem="hr1-Bl-K1g" secondAttribute="leading" constant="25" id="ayI-N5-Lw2"/>
+                            <constraint firstItem="syZ-O0-X2A" firstAttribute="top" secondItem="hr1-Bl-K1g" secondAttribute="top" constant="5" id="sMw-zZ-6Zt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7wi-G9-h4b"/>
+                    <connections>
+                        <outlet property="proteinProgressBar" destination="syZ-O0-X2A" id="ja6-KQ-CI5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAG-J3-Nk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2950.7246376811595" y="53.571428571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S0i-tu-fiD">
@@ -188,6 +222,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

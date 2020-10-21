@@ -12,8 +12,8 @@ struct Search: Decodable {
 }
 
 struct Foods: Decodable {
-    var fdcId: Int
-    var description: String
+    let fdcId: Int
+    let description: String
 }
 
 /*struct FoodNutrients: Decodable {

@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     var value:String?
     
     @IBOutlet weak var searchFoodLabel: UILabel!
-    @IBOutlet weak var searchTextField: customUITextField!
+    @IBOutlet weak var searchTextField: CustomUITextField!
     @IBOutlet weak var searchButton: UIButton!
     
     
@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        NetworkService.shared.getApiKeyFromFirebase()
+        NetworkManager.shared.getApiKeyFromFirebase()
         
         
         
@@ -48,8 +48,8 @@ class MainViewController: UIViewController {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
         if onlyOnce{
             updateUI()
@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
     
     
     func updateUI(){
-        searchFoodLabel.alpha = 0
+        searchFoodLabel.alpha = 1
         searchTextField.alpha = 0
         searchButton.alpha = 0
         searchFoodLabel.textColor = UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
@@ -77,7 +77,6 @@ class MainViewController: UIViewController {
         view.sendSubviewToBack(animatedGradient)
         
         
-        
         UIView.animate(withDuration: 3, delay: 0.5, options: .curveEaseInOut, animations: {
             self.searchFoodLabel.alpha = 1.0
             self.searchTextField.alpha = 1.0
@@ -88,6 +87,10 @@ class MainViewController: UIViewController {
             self.searchButton.frame = CGRect(x:  self.searchButton.frame.origin.x, y: self.searchButton.frame.origin.y - 100, width: self.searchButton.frame.size.width, height: self.searchButton.frame.size.height)
             
         }, completion: nil)
+        
+        print(self.searchFoodLabel.frame)
+        print(self.searchTextField.frame)
+        print(self.searchButton.frame)
         
         onlyOnce = false
     }
@@ -102,7 +105,7 @@ class MainViewController: UIViewController {
         
         if searchTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             searchTextField.shake()
-           
+            
         }else{
             dismissKeyboard()
             performSegue(withIdentifier: "searchFoodResults", sender: nil)
@@ -117,7 +120,7 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchFoodResults" {
-            if let searchFoodVC = segue.destination as? ResultFoodViewController{
+            if let searchFoodVC = segue.destination as? FoodResultsViewController{
                 searchFoodVC.searchParameter = searchTextField.text
             }
         }
@@ -146,18 +149,5 @@ extension UIViewController{
     }
 }
 
-extension UIView {
-    
-    func shake(count : Float = 3,for duration : TimeInterval = 0.5,withTranslation translation : Float = 5) {
-        
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        animation.repeatCount = count
-        animation.duration = duration/TimeInterval(animation.repeatCount)
-        animation.autoreverses = true
-        animation.values = [translation, -translation]
-        layer.add(animation, forKey: "shake")
-    }
-    
-}
+
 

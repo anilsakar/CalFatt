@@ -1,5 +1,5 @@
 //
-//  NetworkService.swift
+//  NetworkManager.swift
 //  CalFatt
 //
 //  Created by Anil on 10/19/20.
@@ -19,10 +19,10 @@ enum ErrorMessage: String, Error {
     case foodsErrorEmty = "Foods Error is emty please check whether you enter food name correct or not"
 }
 
-class NetworkService{
+class NetworkManager{
     
     
-    public static let shared: NetworkService = NetworkService()
+    public static let shared: NetworkManager = NetworkManager()
     
     var ref: DatabaseReference!
     private var urlString:String?
