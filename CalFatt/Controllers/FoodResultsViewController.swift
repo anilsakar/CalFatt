@@ -15,7 +15,7 @@ class FoodResultsViewController: UIViewController {
     
     var searchParameter: String?
     var searchResults: Search?
-    var selectedFoodId:Int?
+    var selectedFood:Foods?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +26,7 @@ class FoodResultsViewController: UIViewController {
         
         //MARK: Make resultsTableView hidden and start spinner because waiting data to fetch
         resultsTableView.isHidden = true
-        
-        
-        
-       
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -106,7 +103,7 @@ class FoodResultsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "foodDetails" {
             if let foodDetailVC = segue.destination as? FoodDetailViewController{
-                foodDetailVC.foodId = selectedFoodId
+                foodDetailVC.food = selectedFood
             }
         }
     }
@@ -155,7 +152,7 @@ extension FoodResultsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedFoodId = searchResults?.foods[indexPath.row].fdcId
+        selectedFood = searchResults?.foods[indexPath.row]
         performSegue(withIdentifier: "foodDetails", sender: nil)
         
     }

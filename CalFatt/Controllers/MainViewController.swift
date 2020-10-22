@@ -24,9 +24,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         NetworkManager.shared.getApiKeyFromFirebase()
-        
-        
-        
+    
         hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -50,6 +48,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        
         
         if onlyOnce{
             updateUI()
@@ -87,10 +87,6 @@ class MainViewController: UIViewController {
             self.searchButton.frame = CGRect(x:  self.searchButton.frame.origin.x, y: self.searchButton.frame.origin.y - 100, width: self.searchButton.frame.size.width, height: self.searchButton.frame.size.height)
             
         }, completion: nil)
-        
-        print(self.searchFoodLabel.frame)
-        print(self.searchTextField.frame)
-        print(self.searchButton.frame)
         
         onlyOnce = false
     }
