@@ -13,9 +13,13 @@ class FoodResultsViewController: UIViewController {
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    @IBOutlet weak var foodSearchBar: UISearchBar!
+    
     var searchParameter: String?
     var searchResults: Search?
     var selectedFood:Foods?
+    
+    var onlyOnce:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +28,33 @@ class FoodResultsViewController: UIViewController {
         resultsTableView.delegate = self
         resultsTableView.dataSource = self
         
+        foodSearchBar.delegate = self
+        
+        foodSearchBar.compatibleSearchTextField.textColor = UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        foodSearchBar.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).cgColor
+        foodSearchBar.layer.borderWidth = 2
+        foodSearchBar.layer.cornerRadius = 30.0
+        foodSearchBar.clipsToBounds = true
+        
         //MARK: Make resultsTableView hidden and start spinner because waiting data to fetch
         resultsTableView.isHidden = true
+        resultsTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        resultsTableView.backgroundColor = .clear
+        
+        drawGradientEffect()
+        
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if onlyOnce{
         spinner.isHidden = false
         spinner.startAnimating()
-        getSearchedData()
-        drawGradientEffect()
+            getSearchedDataWith(paramater: searchParameter ?? "")
+            onlyOnce = false
+        }
         
     }
     
@@ -45,25 +64,23 @@ class FoodResultsViewController: UIViewController {
         animatedGradient.animationValues = [(colors: ["#283048", "#283048"], .up, .axial),//Dark gray to gray
                                             (colors: ["#757F9A", "#D7DDE8"], .right, .axial),//Gray to light gray
                                             (colors: ["#73C8A9", "#373B44"], .down, .axial),
-                                            (colors: ["#485563", "#29323c"], .left, .axial)]
+                                            (colors: ["#283048", "#283048"], .left, .axial)]
         //self.hideNavigationBar()
         view.addSubview(animatedGradient)
         view.sendSubviewToBack(animatedGradient)
     }
     
-    func getSearchedData(){
-        if let search = searchParameter, let str = search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+    func getSearchedDataWith(paramater p:String){
+        if p != "", let p = p.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
             
             
-           NetworkManager.shared.getFoodResults(for: str) { [weak self] result in
+           NetworkManager.shared.getFoodResults(for: p) { [weak self] result in
                 
                 switch result{
                 case .success(let returnValue):
                     self?.searchResults = returnValue
                     DispatchQueue.main.async {
                         
-                        self?.resultsTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-                        self?.resultsTableView.backgroundColor = .clear
                         self?.resultsTableView.reloadData()
                         self?.resultsTableView.isHidden = false
                         
@@ -136,7 +153,7 @@ extension FoodResultsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath) as! ResultsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath) as! FoodResultsTableViewCell
         
         //MARK: Animate created cell
         let animation = AnimationFactory.makeMoveUpWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
@@ -158,6 +175,23 @@ extension FoodResultsViewController: UITableViewDataSource{
     }
     
     
+}
+
+extension FoodResultsViewController:UISearchBarDelegate{
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        let searchedText = searchBar.text
+        
+        if  let myText = searchedText, myText.trimmingCharacters(in: .whitespacesAndNewlines) != ""{
+            
+            getSearchedDataWith(paramater: myText)
+
+        }
+ 
+        searchBar.text = ""
+        dismissKeyboard()
+    }
 }
 
 

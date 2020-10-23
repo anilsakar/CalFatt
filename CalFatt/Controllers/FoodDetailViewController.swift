@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AnimatedGradientView
 
 class FoodDetailViewController: UIViewController {
     
@@ -38,8 +39,6 @@ class FoodDetailViewController: UIViewController {
     var food:Foods?
     var foodDescription: FoodDescription?
     
-    
-    var counter:Float = 0.0
     var timer: Timer?
     var protein: Double?
     var fat: Double?
@@ -50,42 +49,51 @@ class FoodDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //foodDetailTableView.delegate = self
-        //foodDetailTableView.dataSource = self
+        foodDetailTableView.delegate = self
+        foodDetailTableView.dataSource = self
+        
+        viewDidLoadActions()
+        
+        drawGradientEffect()
+        
+       
+    }
+    
+    func viewDidLoadActions(){
+        
+        foodDetailTableView.backgroundColor = .clear
+        foodDetailView.backgroundColor = .clear
         
         foodDetailView.isHidden = true
         foodDetailView.alpha = 0
-        
-        proteinLabel.isHidden = true
-        proteinPercentageLabel.isHidden = true
-        proteinProgressBar.isHidden = true
-        
-        fatLabel.isHidden = true
-        fatPercentageLabel.isHidden = true
-        fatProgressBar.isHidden = true
-        
-        carbLabel.isHidden = true
-        carbPercentageLabel.isHidden = true
-        carbProgressBar.isHidden = true
-        
-        
-        alcholLabel.isHidden = true
-        alcholPercentageLabel.isHidden = true
-        alcholProgressBar.isHidden = true
-        
+
         spinner.isHidden = false
+    
+        
+        proteinProgressBar.changeColorFor(red: 169, green: 255, blue: 23)
+        fatProgressBar.changeColorFor(red: 255, green: 192, blue: 55)
+        carbProgressBar.changeColorFor(red: 109, green: 100, blue: 250)
+        alcholProgressBar.changeColorFor(red: 188, green: 0, blue: 255)
+        
+        changeProgressBarUIHiddenFor(label: proteinLabel, percentageLabel: proteinPercentageLabel, customProgressBar: proteinProgressBar)
+        changeProgressBarUIHiddenFor(label: fatLabel, percentageLabel: fatPercentageLabel, customProgressBar: fatProgressBar)
+        changeProgressBarUIHiddenFor(label: carbLabel, percentageLabel: carbPercentageLabel, customProgressBar: carbProgressBar)
+        changeProgressBarUIHiddenFor(label: alcholLabel, percentageLabel: alcholPercentageLabel, customProgressBar: alcholProgressBar)
+
         
         configureNavigationTitle(food?.description ?? "Something Went Wrong")
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(self.updateDelay), userInfo: nil, repeats: true)
-        
-        
-        spinner.startAnimating()
-        
+            spinner.startAnimating()
+            fetchFoodDetail()
+
+    }
+    
+    func fetchFoodDetail(){
         
         NetworkManager.shared.getFoodDescriptionBy(foodId: food?.fdcId ?? 0) { [weak self] result in
             
@@ -94,20 +102,23 @@ class FoodDetailViewController: UIViewController {
                 
                 self?.foodDescription = returnValue
                 self?.getProgressBarData()
-                self?.calculateTotal()
+                self?.calculateTotalAndMax()
                 DispatchQueue.main.async {
                     
                     self?.spinner.stopAnimating()
                     self?.spinner.isHidden = true
                     
                     UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseInOut, animations: {
-                        self?.updateUIAfterAnimationCompletion()
+                        self?.updateUI()
+                        self?.foodDetailTableView.reloadData()
                     }, completion: { finished in
                         
                         UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseInOut, animations: {
                             self?.foodDetailView.isHidden = false
                             self?.foodDetailView.alpha = 1
-                        }, completion:nil)
+                        }, completion:{finished in
+                            self?.timer = Timer.scheduledTimer(timeInterval: 0.2, target: self!, selector: #selector(self?.updateDelay), userInfo: nil, repeats: true)
+                        })
                         
                     })
                     
@@ -119,75 +130,93 @@ class FoodDetailViewController: UIViewController {
             
         }
         
+    }
+    
+    func drawGradientEffect(){
+        
+        let animatedGradient = AnimatedGradientView(frame: view.bounds)
+        animatedGradient.direction = .up
+        animatedGradient.animationValues = [(colors: ["#283048", "#283048"], .up, .axial),//Dark gray to gray
+                                            (colors: ["#757F9A", "#D7DDE8"], .right, .axial),//Gray to light gray
+                                            (colors: ["#73C8A9", "#373B44"], .down, .axial),
+                                            (colors: ["#283048", "#283048"], .left, .axial)]
+        //self.hideNavigationBar()
+        view.addSubview(animatedGradient)
+        view.sendSubviewToBack(animatedGradient)
+    }
+    
+    func changeProgressBarUIFor(label myLabel: UILabel, percentageLabel myPercentageLabel: UILabel, customProgressBar myCustomProgressBar: CustomProgressBar, text myText:String, percentage myPercantage:String, progressBar myProgressBar:CGFloat ){
+        
+        myLabel.textColor = UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        myLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 17)!
+        myLabel.text = myText
+        
+        myPercentageLabel.text = myPercantage
+        myPercentageLabel.textColor = UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        myPercentageLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 17)!
+        
+        myCustomProgressBar.progress = myProgressBar
+        
+        
+    }
+    
+    func changeProgressBarUIHiddenFor(label myLabel: UILabel, percentageLabel myPercentageLabel: UILabel, customProgressBar myCustomProgressBar: CustomProgressBar){
+        
+        myLabel.isHidden = !myLabel.isHidden
+        myPercentageLabel.isHidden = !myPercentageLabel.isHidden
+        myCustomProgressBar.isHidden = !myCustomProgressBar.isHidden
         
     }
     
     
-    
-    func updateUIAfterAnimationCompletion(){
+    func updateUI(){
         
         if let myProtein = protein, let myFat = fat, let myCarb = carb, let myTotal = total{
             
             if !myProtein.isZero{
                 
-                proteinLabel.text = "Protein: \(myProtein)"
-                proteinPercentageLabel.text = "\((myProtein/myTotal)*100)%"
-                proteinProgressBar.progress = CGFloat(myProtein/myTotal)
-                
-                proteinLabel.isHidden = false
-                proteinPercentageLabel.isHidden = false
-                proteinProgressBar.isHidden = false
-                
+                changeProgressBarUIFor(label: proteinLabel, percentageLabel: proteinPercentageLabel, customProgressBar: proteinProgressBar, text: "Protein: \(myProtein)", percentage: "\(String(format: "%.02f", (myProtein/myTotal)*100))%", progressBar: CGFloat(0))
+
+                changeProgressBarUIHiddenFor(label: proteinLabel, percentageLabel: proteinPercentageLabel, customProgressBar: proteinProgressBar)
             }
             
             if !myFat.isZero{
                 
-                fatLabel.text = "Fat: \(myFat)"
-                fatPercentageLabel.text = "\((myFat/myTotal)*100)%"
-                fatProgressBar.progress = CGFloat(myFat/myTotal)
-                
-                fatLabel.isHidden = false
-                fatPercentageLabel.isHidden = false
-                fatProgressBar.isHidden = false
+                changeProgressBarUIFor(label: fatLabel, percentageLabel: fatPercentageLabel, customProgressBar: fatProgressBar, text: "Fat: \(myFat)", percentage: "\(String(format: "%.02f", (myFat/myTotal)*100))%", progressBar: CGFloat(0))
+
+                changeProgressBarUIHiddenFor(label: fatLabel, percentageLabel: fatPercentageLabel, customProgressBar: fatProgressBar)
             }
             
             if !myCarb.isZero{
                 
-                carbLabel.text = "Carbohydrate: \(myCarb)"
-                carbPercentageLabel.text = "\((myCarb/myTotal)*100)%"
-                carbProgressBar.progress = CGFloat(myCarb/myTotal)
+                changeProgressBarUIFor(label: carbLabel, percentageLabel: carbPercentageLabel, customProgressBar: carbProgressBar, text: "Carbohydrate: \(myCarb)", percentage: "\(String(format: "%.02f", (myCarb/myTotal)*100))%", progressBar: CGFloat(0))
+
                 
-                carbLabel.isHidden = false
-                carbPercentageLabel.isHidden = false
-                carbProgressBar.isHidden = false
+                changeProgressBarUIHiddenFor(label: carbLabel, percentageLabel: carbPercentageLabel, customProgressBar: carbProgressBar)
+                
             }
             
             if let myAlchol = alchol{
                 
                 if !myAlchol.isZero{
                     
-                    alcholLabel.text = "Alchol: \(myAlchol)"
-                    alcholPercentageLabel.text = "\((myAlchol/myTotal)*100)%"
-                    alcholProgressBar.progress = CGFloat(myAlchol/myTotal)
-                    
-                    
-                    alcholLabel.isHidden = false
-                    alcholPercentageLabel.isHidden = false
-                    alcholProgressBar.isHidden = false
+                    changeProgressBarUIFor(label: alcholLabel, percentageLabel: alcholPercentageLabel, customProgressBar: alcholProgressBar, text: "Alchol: \(myAlchol)", percentage: "\(String(format: "%.02f", (myAlchol/myTotal)*100))%", progressBar: CGFloat(0))
+            
+                    changeProgressBarUIHiddenFor(label: alcholLabel, percentageLabel: alcholPercentageLabel, customProgressBar: alcholProgressBar)
+
                 }
             }
             
         }
     }
     
-    func calculateTotal(){
+    func calculateTotalAndMax(){
         
         if let myFat = fat, let myProtein = protein, let myCarb = carb{
             
             if let myAlchol = alchol{
                 total = myProtein + myFat + myCarb + myAlchol
             }else{
-                
                 total = myProtein + myFat + myCarb
             }
             
@@ -219,35 +248,83 @@ class FoodDetailViewController: UIViewController {
     }
     
     @objc func updateDelay() {
-        if (counter == 0.4) {
+        
+        if let myFat = fat, let myProtein = protein, let myCarb = carb, let myTotal = total{
+            
+            if !myProtein.isZero{
+                proteinProgressBar.progress = CGFloat(myProtein/myTotal)
+            }
+            if !myFat.isZero{
+                fatProgressBar.progress = CGFloat(myFat/myTotal)
+            }
+            if !myCarb.isZero{
+                carbProgressBar.progress = CGFloat(myCarb/myTotal)
+            }
+            if let myAlchol = alchol, !myAlchol.isZero{
+                
+                    alcholProgressBar.progress = CGFloat(myAlchol/myTotal)
+            }
+
             timer?.invalidate()
-            timer = nil
             
-            
-        } else {
-            counter = counter + 0.1
-            //proteinProgressBar.progress = CGFloat(counter)
         }
+
+        
     }
     
     private func configureNavigationTitle(_ title: String) {
         let tempLabel = UILabel()
-        tempLabel.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        tempLabel.textColor = UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        tempLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 64)!
         tempLabel.text = title
         
         if tempLabel.intrinsicContentSize.width > UIScreen.main.bounds.width - 30 {
             var currentTextSize: CGFloat = 34
             for _ in 1 ... 34 {
                 currentTextSize -= 1
-                tempLabel.font = UIFont.systemFont(ofSize: currentTextSize, weight: .bold)
+                tempLabel.font = UIFont(name: "HelveticaNeue-Bold", size: currentTextSize)!
                 if tempLabel.intrinsicContentSize.width < UIScreen.main.bounds.width - 30 {
                     break
                 }
             }
-            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font : UIFont.systemFont(ofSize: currentTextSize, weight: .bold)]
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: currentTextSize)!, NSAttributedString.Key.foregroundColor: UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))]
         }
         self.title = title
     }
+    
+    
+}
+
+extension FoodDetailViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+}
+
+extension FoodDetailViewController:UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return foodDescription?.foodNutrients.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "foodDetailsCell", for: indexPath) as! FoodDetailTableViewCell
+        
+        //MARK: Animate created cell
+        let animation = AnimationFactory.makeMoveUpWithFade(rowHeight: cell.frame.height, duration: 0.5, delayFactor: 0.05)
+        let animator = Animator(animation: animation)
+        animator.animate(cell: cell, at: indexPath, in: tableView)
+        
+        //MARK: Assign cell label the returned API results.
+        cell.foodNutrientName.text = foodDescription?.foodNutrients[indexPath.row].nutrient.name
+        cell.foodNutrientWeight.text = "\(foodDescription?.foodNutrients[indexPath.row].amount ?? 0)\(foodDescription?.foodNutrients[indexPath.row].nutrient.unitName ?? " ")"
+        
+        return cell
+        
+    }
+    
     
     
 }

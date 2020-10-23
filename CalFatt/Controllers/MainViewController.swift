@@ -50,7 +50,6 @@ class MainViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         
-        
         if onlyOnce{
             updateUI()
         }
@@ -125,25 +124,7 @@ class MainViewController: UIViewController {
     
 }
 
-extension UIViewController{
-    
-    func hideNavigationBar(){
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.view.backgroundColor = UIColor.clear
-    }
-    
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
+
 
 
 
