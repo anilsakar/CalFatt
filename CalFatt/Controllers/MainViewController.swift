@@ -76,12 +76,12 @@ class MainViewController: UIViewController {
         view.sendSubviewToBack(animatedGradient)
         
         
-        UIView.animate(withDuration: 3, delay: 0.5, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 1.5, delay: 0.5, options: .curveEaseInOut, animations: {
             self.searchFoodLabel.alpha = 1.0
             self.searchTextField.alpha = 1.0
             self.searchButton.alpha = 1.0
             
-            self.searchFoodLabel.frame = CGRect(x:  self.searchFoodLabel.frame.origin.x, y: self.searchFoodLabel.frame.origin.y + 100, width: self.searchFoodLabel.frame.size.width, height: self.searchFoodLabel.frame.size.height)
+            self.searchFoodLabel.frame = CGRect(x:  self.searchFoodLabel.frame.origin.x, y: self.searchFoodLabel.frame.origin.y + 1000, width: self.searchFoodLabel.frame.size.width, height: self.searchFoodLabel.frame.size.height)
             self.searchTextField.frame = CGRect(x:  self.searchTextField.frame.origin.x, y: self.searchTextField.frame.origin.y - 100, width: self.searchTextField.frame.size.width, height: self.searchTextField.frame.size.height)
             self.searchButton.frame = CGRect(x:  self.searchButton.frame.origin.x, y: self.searchButton.frame.origin.y - 100, width: self.searchButton.frame.size.width, height: self.searchButton.frame.size.height)
             

@@ -52,14 +52,12 @@ class FoodDetailViewController: UIViewController {
         foodDetailTableView.delegate = self
         foodDetailTableView.dataSource = self
         
-        viewDidLoadActions()
+        prepareViewDidLoad()
         
-        drawGradientEffect()
-        
-       
     }
     
-    func viewDidLoadActions(){
+    func prepareViewDidLoad(){
+        
         
         foodDetailTableView.backgroundColor = .clear
         foodDetailView.backgroundColor = .clear
@@ -82,6 +80,8 @@ class FoodDetailViewController: UIViewController {
 
         
         configureNavigationTitle(food?.description ?? "Something Went Wrong")
+        
+        drawGradientEffect()
         
     }
     
@@ -108,12 +108,12 @@ class FoodDetailViewController: UIViewController {
                     self?.spinner.stopAnimating()
                     self?.spinner.isHidden = true
                     
-                    UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseInOut, animations: {
+                    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
                         self?.updateUI()
                         self?.foodDetailTableView.reloadData()
                     }, completion: { finished in
                         
-                        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseInOut, animations: {
+                        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
                             self?.foodDetailView.isHidden = false
                             self?.foodDetailView.alpha = 1
                         }, completion:{finished in

@@ -35,6 +35,8 @@
 		04F203E32540C6140049BEE2 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F203E22540C6140049BEE2 /* Basket.swift */; };
 		04F203F32540E7A60049BEE2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F203F22540E7A60049BEE2 /* Extensions.swift */; };
 		04F203FB2540EA360049BEE2 /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F203FA2540EA360049BEE2 /* FoodDetailViewController.swift */; };
+		04FD4D4F254450B300D7C483 /* FoodBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD4D4E254450B300D7C483 /* FoodBasketViewController.swift */; };
+		04FD4D542544991100D7C483 /* BasketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD4D532544991100D7C483 /* BasketCollectionViewCell.swift */; };
 		BE27B01C64132D66FDC537C1 /* Pods_CalFatt_CalFattUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */; };
 		F7A51412973D9508F3602FDF /* Pods_CalFattTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64F168CFF6799EB43023039 /* Pods_CalFattTests.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		04F203E22540C6140049BEE2 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		04F203F22540E7A60049BEE2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		04F203FA2540EA360049BEE2 /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
+		04FD4D4E254450B300D7C483 /* FoodBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBasketViewController.swift; sourceTree = "<group>"; };
+		04FD4D532544991100D7C483 /* BasketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCollectionViewCell.swift; sourceTree = "<group>"; };
 		25208E99B335F15F63BC80FF /* Pods_CalFatt_CalFattUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFatt_CalFattUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E77BBC996FC0FFB22CCB7E /* Pods-CalFatt-CalFattUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalFatt-CalFattUITests.release.xcconfig"; path = "Target Support Files/Pods-CalFatt-CalFattUITests/Pods-CalFatt-CalFattUITests.release.xcconfig"; sourceTree = "<group>"; };
 		690AB3505C941A3B961B5EE0 /* Pods_CalFatt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalFatt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,7 @@
 			children = (
 				049D843F253F4C5800B6AF65 /* FoodResultsTableViewCell.swift */,
 				041E79AF25432226000F2137 /* FoodDetailTableViewCell.swift */,
+				04FD4D532544991100D7C483 /* BasketCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				04819D59253B9E6100F508E1 /* MainViewController.swift */,
 				047D4843253DE663005D0425 /* FoodResultsViewController.swift */,
 				04F203FA2540EA360049BEE2 /* FoodDetailViewController.swift */,
+				04FD4D4E254450B300D7C483 /* FoodBasketViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -564,6 +570,8 @@
 				04DF5F192541F6E500C96343 /* FoodDescription.swift in Sources */,
 				047D0C57253E068D00214519 /* NetworkManager.swift in Sources */,
 				04BE74D02540F7C600FB2C0C /* CustomProgressBar.swift in Sources */,
+				04FD4D542544991100D7C483 /* BasketCollectionViewCell.swift in Sources */,
+				04FD4D4F254450B300D7C483 /* FoodBasketViewController.swift in Sources */,
 				04F203F32540E7A60049BEE2 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,6 +30,14 @@ class FoodResultsViewController: UIViewController {
         
         foodSearchBar.delegate = self
         
+        prepareViewDidLoad()
+        
+
+    }
+    
+    func prepareViewDidLoad(){
+        
+        //MARK: Search bar UI options.
         foodSearchBar.compatibleSearchTextField.textColor = UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
         foodSearchBar.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)).cgColor
         foodSearchBar.layer.borderWidth = 2
@@ -42,8 +50,6 @@ class FoodResultsViewController: UIViewController {
         resultsTableView.backgroundColor = .clear
         
         drawGradientEffect()
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -122,6 +128,10 @@ class FoodResultsViewController: UIViewController {
             if let foodDetailVC = segue.destination as? FoodDetailViewController{
                 foodDetailVC.food = selectedFood
             }
+        }
+        else if segue.identifier == "myBasket"{
+            
+            
         }
     }
     
