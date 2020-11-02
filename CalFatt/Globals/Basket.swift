@@ -11,7 +11,7 @@ import Foundation
 class Basket {
     private init() { }
     static let shared = Basket()
-    var basket: [Foods] = []
+    private var basket: [Foods] = []
     
     
     func basketTotal() -> Int {
@@ -44,6 +44,10 @@ class Basket {
     
     func getFoodDescrition(at index: Int)-> String{
         return basket[index].description
+    }
+    
+    func getBasket()->[Foods]{
+        return basket
     }
     
 }

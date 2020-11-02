@@ -133,6 +133,59 @@ class NetworkManager{
         
     }
     
+    func getFoodDescriptionsBy(foodIds ids:String, completed: @escaping (Result<[FoodDescription], ErrorMessage>) -> Void){
+        
+        if let myApiKey = KeychainWrapper.standard.string(forKey: "myApiKey"), myApiKey != "No Key"{
+            urlString = "https://api.nal.usda.gov/fdc/v1/foods/?api_key=\(myApiKey)&fdcIds=\(ids)"
+            print("Fetched Food ids: \(ids)")
+        }else{
+            completed(.failure(.apiKeyError))
+            return
+        }
+        guard let url = URL(string: urlString!) else {
+            completed(.failure(.urlError))
+            return}
+       
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let _ = error {
+                completed(.failure(.invalidData))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+
+            guard let data = data else {
+               
+                completed(.failure(.invalidData))
+                return
+            }
+            
+            do {
+                let deconder = JSONDecoder()
+                deconder.keyDecodingStrategy = .convertFromSnakeCase
+                let results = try deconder.decode([FoodDescription].self, from: data)
+                
+                if results.isEmpty{
+                    completed(.failure(.foodsErrorEmty))
+                    return
+                }
+                completed(.success(results))
+                
+                
+            } catch {
+                
+                completed(.failure(.dataValidationError))
+            }
+        }
+        task.resume()
+        
+    }
+    
     func getApiKeyFromFirebase(){
         
         let _: Bool = KeychainWrapper.standard.removeObject(forKey: "myApiKey")

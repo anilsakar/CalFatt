@@ -21,11 +21,12 @@ struct FoodNutrients: Decodable {
 struct Nutrient: Decodable{
     
     var name: String
-    var unitName:String
+    var nutrientUnit:NutrientUnit
     
 }
 
-struct FoodPortions: Decodable {
-    var gramWeight: Double
-    var portionDescription: String
+struct NutrientUnit:Decodable{
+    var name:String
 }
+
+

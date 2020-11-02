@@ -32,6 +32,7 @@
 		049D8468253F863C00B6AF65 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D8467253F863C00B6AF65 /* Animations.swift */; };
 		04BE74D02540F7C600FB2C0C /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BE74CF2540F7C600FB2C0C /* CustomProgressBar.swift */; };
 		04DF5F192541F6E500C96343 /* FoodDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF5F182541F6E500C96343 /* FoodDescription.swift */; };
+		04E376A92550768700C5A3CA /* FoodCalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E376A82550768700C5A3CA /* FoodCalculateViewController.swift */; };
 		04F203E32540C6140049BEE2 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F203E22540C6140049BEE2 /* Basket.swift */; };
 		04F203F32540E7A60049BEE2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F203F22540E7A60049BEE2 /* Extensions.swift */; };
 		04F203FB2540EA360049BEE2 /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F203FA2540EA360049BEE2 /* FoodDetailViewController.swift */; };
@@ -85,6 +86,7 @@
 		049D8467253F863C00B6AF65 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		04BE74CF2540F7C600FB2C0C /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		04DF5F182541F6E500C96343 /* FoodDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDescription.swift; sourceTree = "<group>"; };
+		04E376A82550768700C5A3CA /* FoodCalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCalculateViewController.swift; sourceTree = "<group>"; };
 		04F203E22540C6140049BEE2 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		04F203F22540E7A60049BEE2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		04F203FA2540EA360049BEE2 /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				047D4843253DE663005D0425 /* FoodResultsViewController.swift */,
 				04F203FA2540EA360049BEE2 /* FoodDetailViewController.swift */,
 				04FD4D4E254450B300D7C483 /* FoodBasketViewController.swift */,
+				04E376A82550768700C5A3CA /* FoodCalculateViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				049D845B253F85C900B6AF65 /* Animator.swift in Sources */,
 				04819D5A253B9E6100F508E1 /* MainViewController.swift in Sources */,
 				047D483C253DBB79005D0425 /* CustomUITextField.swift in Sources */,
+				04E376A92550768700C5A3CA /* FoodCalculateViewController.swift in Sources */,
 				049D8440253F4C5800B6AF65 /* FoodResultsTableViewCell.swift in Sources */,
 				047D4844253DE663005D0425 /* FoodResultsViewController.swift in Sources */,
 				04F203FB2540EA360049BEE2 /* FoodDetailViewController.swift in Sources */,

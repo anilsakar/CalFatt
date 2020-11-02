@@ -233,13 +233,13 @@ class FoodDetailViewController: UIViewController {
                 
                 switch food.nutrient.name {
                 case "Protein":
-                    protein = food.amount
+                    protein = food.amount! * 4
                 case "Total lipid (fat)":
-                    fat = food.amount
+                    fat = food.amount! * 9
                 case "Carbohydrate, by difference":
-                    carb = food.amount
+                    carb = food.amount! * 4
                 case "Alcohol, ethyl":
-                    alchol  = food.amount
+                    alchol  = food.amount! * 7
                 default:
                     break
                 }
@@ -319,7 +319,7 @@ extension FoodDetailViewController:UITableViewDataSource{
         
         //MARK: Assign cell label the returned API results.
         cell.foodNutrientName.text = foodDescription?.foodNutrients[indexPath.row].nutrient.name
-        cell.foodNutrientWeight.text = "\(foodDescription?.foodNutrients[indexPath.row].amount ?? 0)\(foodDescription?.foodNutrients[indexPath.row].nutrient.unitName ?? " ")"
+        cell.foodNutrientWeight.text = "\(foodDescription?.foodNutrients[indexPath.row].amount ?? 0)\(foodDescription?.foodNutrients[indexPath.row].nutrient.nutrientUnit.name ?? " ")"
         
         return cell
         

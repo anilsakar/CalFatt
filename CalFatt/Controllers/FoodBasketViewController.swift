@@ -226,9 +226,8 @@ extension FoodBasketViewController:UICollectionViewDropDelegate{
             }
         
             
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseInOut, animations: {
                 self.trashImageView.alpha = 1
-                self.trashImageView.shake(count: 3, for: 1, withTranslation: 5)
             }, completion:nil)
             
             
@@ -260,7 +259,6 @@ extension FoodBasketViewController:UICollectionViewDropDelegate{
                 self.removeItems(coordinator: coordinator, destinationIndexPath: destinationIndexPath, collectionView: collectionView)
             }
         }
-        print(Basket.shared.basket)
     }
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidExit session: UIDropSession) {

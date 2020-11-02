@@ -107,7 +107,7 @@ class FoodResultsViewController: UIViewController {
         let action = UIContextualAction(style: .normal, title: "Add To Basket") { (action, view, completion) in
             
             if let food = self.searchResults?.foods[indexpath.row]{
-                Basket.shared.basket.append(food)
+                Basket.shared.addToBasket(food: food)
                 self.searchResults?.foods.remove(at: indexpath.row)
                 self.resultsTableView.deleteRows(at: [indexpath], with: .fade)
                 completion(true)
