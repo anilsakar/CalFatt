@@ -1,5 +1,8 @@
 # CalFatt
 
+Calfatt is a app that you can search almost every food and learn their nutrients. As a backend API it uses offical US Government food database ([U.S. DEPARTMENT OF AGRICULTURE]: https://fdc.nal.usda.gov/index.html). 
+
+
 --Opening--  
 
 
