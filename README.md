@@ -1,11 +1,11 @@
 # CalFatt
 
-Calfatt is a app that you can search almost every food and learn their nutrients. As a backend API it uses offical US Government food database.
-To visit the site people can use [U.S. DEPARTMENT OF AGRICULTURE](https://fdc.nal.usda.gov/index.html) site to access food data.
+Calfatt is a app that you can search almost every food and learn their nutrients. As a backend API it uses the official US Government food database. To visit the site people can use [U.S. DEPARTMENT OF AGRICULTURE](https://fdc.nal.usda.gov/index.html) site to access food data.
 
-App also uses [Firebase](https://firebase.google.com/) to get the API key from the Firebase Real Time database. After gettting the key it stores the API key inside [Key Chain Wrapper](https://github.com/jrendel/SwiftKeychainWrapper).
+App also uses [Firebase](https://firebase.google.com/) to get the API key from the Firebase Real Time database. After getting the key it stores the API key inside [Keychain Wrapper](https://github.com/jrendel/SwiftKeychainWrapper).
 
-It also uses [Animated Gradient Effect](https://github.com/rwbutler/AnimatedGradientView) to visualize app to look pretty.
+It also uses [Animated Gradient Effect](https://github.com/rwbutler/AnimatedGradientView) to visualize the app to look pretty.
+
 
 --Opening--  
 
